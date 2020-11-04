@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Webclient\Extension\ProtocolVersion;
 
 use Stuff\Webclient\Extension\ProtocolVersion\Handler;
-use Nyholm\Psr7\Request;
+use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientExceptionInterface;
 use Webclient\Extension\ProtocolVersion\Client;
