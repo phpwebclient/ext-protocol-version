@@ -4,18 +4,17 @@ declare(strict_types=1);
 
 namespace Stuff\Webclient\Extension\ProtocolVersion;
 
-use GuzzleHttp\Psr7\Response;
+use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 class Handler implements RequestHandlerInterface
 {
-
     /**
      * @var string[]
      */
-    private $versions;
+    private array $versions;
 
     public function __construct(string $defaultVersion, string ...$supportedVersions)
     {

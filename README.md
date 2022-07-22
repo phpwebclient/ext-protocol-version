@@ -12,7 +12,7 @@ Auto change protocol version extension for PSR-18 HTTP client.
 Install this package and your favorite [psr-18 implementation](https://packagist.org/providers/psr/http-client-implementation).
 
 ```bash
-composer require webclient/ext-protocol-version:^1.0
+composer require webclient/ext-protocol-version:^2.0
 ```
 
 # Using
@@ -20,14 +20,14 @@ composer require webclient/ext-protocol-version:^1.0
 ```php
 <?php
 
-use Webclient\Extension\ProtocolVersion\Client;
+use Webclient\Extension\ProtocolVersion\ProtocolClientDecorator;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 /** 
  * @var ClientInterface $client Your PSR-18 HTTP Client
  */
-$http = new Client($client);
+$http = new ProtocolClientDecorator($client);
 
 /** @var RequestInterface $request */
 $response = $http->sendRequest($request);

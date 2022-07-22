@@ -8,13 +8,9 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-final class Client implements ClientInterface
+final class ProtocolClientDecorator implements ClientInterface
 {
-
-    /**
-     * @var ClientInterface
-     */
-    private $client;
+    private ClientInterface $client;
 
     public function __construct(ClientInterface $client)
     {
